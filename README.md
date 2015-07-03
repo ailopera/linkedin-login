@@ -1,2 +1,2 @@
 # linkedin-login
-Web component for linked in login button. 
+Web component for linkedin login button. 
