@@ -7,10 +7,10 @@ The complete set of contributors may be found at http://polymer.github.io/CONTRI
 Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 -->
-<link rel="import" href="../polymer/polymer.html">
-<link rel="import" href="../paper-button/paper-button.html">
-<link rel="import" href="../iron-ajax/iron-ajax.html">
-<link rel="import" href="../iron-icon/iron-icon.html">
+<link rel="import" href="bower_components/polymer/polymer.html">
+<link rel="import" href="bower_components/paper-button/paper-button.html">
+<link rel="import" href="bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="bower_components/iron-icon/iron-icon.html">
 
 
 
@@ -114,6 +114,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     // Use the API call wrapper to request the member"s basic profile data
     function getProfileData(){
+      console.log("Voy a obtener los datos del usuario");
       IN.API.Raw("/people/~").result(onSuccess).error(onError);
     }
   </script>
@@ -165,7 +166,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         script.id = "scriptlinkedin"
         document.body.appendChild(script);
         document.addEventListener("customLogin", function(){
-          IN.API.Raw("/people/~").result(onSuccess).error(onError);
+          //IN.API.Raw("/people/~").result(onSuccess).error(onError);
+          IN.API.Profile("me").result(onSuccess);
         })
       },
 
