@@ -114,7 +114,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     // Use the API call wrapper to request the member"s basic profile data
     function getProfileData(){
-      console.log("Voy a obtener los datos del usuario");
       IN.API.Raw("/people/~").result(onSuccess).error(function(a){console.log(a)});
     }
     
@@ -167,7 +166,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         script.id = "scriptlinkedin"
         document.body.appendChild(script);
         document.addEventListener("customLogin", function(){
-          IN.API.Profile("/people/~").result(onSuccess).error(onError);
+          IN.API.Raw("/people/~").result(onSuccess).error(onError);
         })
       },
 
